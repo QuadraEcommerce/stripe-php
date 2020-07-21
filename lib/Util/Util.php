@@ -42,7 +42,7 @@ abstract class Util
         $results = [];
         foreach ($values as $k => $v) {
             // FIXME: this is an encapsulation violation
-            if ($k[0] == '_') {
+            if ($k[0] === \substr((string) $k, 0, 1)) {
                 continue;
             }
             if ($v instanceof StripeObject) {
